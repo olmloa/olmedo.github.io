@@ -1,0 +1,270 @@
+/* --- Variables y Reset Básico --- */
+:root {
+    --primary-color: #007bff; /* Azul */
+    --secondary-color: #6c757d; /* Gris */
+    --dark-bg: #343a40; /* Gris Oscuro */
+    --light-bg: #f8f9fa; /* Gris Claro */
+    --text-light: #ffffff;
+    --text-dark: #212529;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--light-bg);
+}
+
+/* --- Estilos de Contenedor y Secciones --- */
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+.section h3 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.dark-bg {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+
+.dark-bg h3 {
+    color: var(--text-light);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+/* --- Estilos del Hero Header (Banner Principal) --- */
+.hero {
+    background: url('https://picsum.photos/1920/1080?grayscale&blur=2') no-repeat center center/cover; /* Imagen de fondo inventada */
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+    position: relative;
+}
+
+/* Oscurece la imagen para que el texto resalte */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.hero-content {
+    position: relative; /* Asegura que el contenido esté sobre el overlay */
+    z-index: 10;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    color: #a8d9ff;
+}
+
+.hero-content p {
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* --- Estilos de Botones --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: 2px solid var(--primary-color);
+}
+
+.primary-btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* --- Estilos de Acerca de Mí --- */
+#acerca-de p {
+    text-align: justify;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.skills-grid {
+    background-color: #e9ecef;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.skills-grid h4 {
+    margin-bottom: 1rem;
+    color: var(--dark-bg);
+}
+
+.skills-grid ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+}
+
+.skills-grid ul li {
+    font-size: 1rem;
+    flex-basis: calc(50% - 15px); /* Dos columnas */
+}
+
+.skills-grid ul li i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+/* --- Estilos de Proyectos --- */
+.project-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background-color: var(--text-light);
+    color: var(--text-dark);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.tech-tag {
+    display: inline-block;
+    background-color: #495057;
+    color: var(--text-light);
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* --- Estilos de Contacto --- */
+.contact-info {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+.social-links {
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    color: var(--dark-bg);
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Estilos de Footer --- */
+footer {
+    background-color: var(--dark-bg);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* --- Media Queries para Responsiveness --- */
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    .section h3 {
+        font-size: 2rem;
+    }
+    .skills-grid ul li {
+        flex-basis: 100%; /* Una columna en móviles */
+    }
+}
